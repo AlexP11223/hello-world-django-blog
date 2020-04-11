@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'create' %}">Add Post</a>
+<ul>
+    {% for post in post_list %}
+        <li>
+            <h2><a href="{% url 'show' post.id %}">{{ post.title }}</a></h2>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
